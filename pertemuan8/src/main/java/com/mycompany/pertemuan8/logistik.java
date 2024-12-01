@@ -148,27 +148,41 @@ public class logistik extends javax.swing.JFrame {
 
         jCBStatusPengiriman.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Penjemputan Kurir", "Dalam Perjalanan", "Barang Diterima", "Retur" }));
 
+        btnSimpan.setBackground(new java.awt.Color(0, 102, 102));
+        btnSimpan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSimpan.setForeground(new java.awt.Color(255, 255, 255));
         btnSimpan.setText("Simpan");
+        btnSimpan.setPreferredSize(new java.awt.Dimension(76, 30));
         btnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimpanActionPerformed(evt);
             }
         });
 
+        jButtonHasilIsiTabel.setBackground(new java.awt.Color(0, 102, 102));
+        jButtonHasilIsiTabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonHasilIsiTabel.setForeground(new java.awt.Color(255, 255, 255));
         jButtonHasilIsiTabel.setText("Hapus Isi Tabel");
+        jButtonHasilIsiTabel.setPreferredSize(new java.awt.Dimension(116, 30));
         jButtonHasilIsiTabel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonHasilIsiTabelActionPerformed(evt);
             }
         });
 
+        jButtonHapusBarisTabel.setBackground(new java.awt.Color(0, 102, 102));
+        jButtonHapusBarisTabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonHapusBarisTabel.setForeground(new java.awt.Color(255, 255, 255));
         jButtonHapusBarisTabel.setText("Hapus Baris Tabel");
+        jButtonHapusBarisTabel.setPreferredSize(new java.awt.Dimension(131, 30));
         jButtonHapusBarisTabel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonHapusBarisTabelActionPerformed(evt);
             }
         });
 
+        jTableHasil.setBackground(new java.awt.Color(0, 102, 102));
+        jTableHasil.setForeground(new java.awt.Color(255, 255, 255));
         jTableHasil.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -192,7 +206,11 @@ public class logistik extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTableHasil);
         jTableHasil.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
+        jButtonKeluar.setBackground(new java.awt.Color(0, 102, 102));
+        jButtonKeluar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonKeluar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonKeluar.setText("Keluar");
+        jButtonKeluar.setPreferredSize(new java.awt.Dimension(76, 30));
         jButtonKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonKeluarActionPerformed(evt);
@@ -207,13 +225,13 @@ public class logistik extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSimpan)
+                        .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonHasilIsiTabel)
+                        .addComponent(jButtonHasilIsiTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonHapusBarisTabel)
+                        .addComponent(jButtonHapusBarisTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonKeluar))
+                        .addComponent(jButtonKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel16)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,12 +346,12 @@ public class logistik extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jCBStatusPengiriman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSimpan)
-                    .addComponent(jButtonHasilIsiTabel)
-                    .addComponent(jButtonHapusBarisTabel)
-                    .addComponent(jButtonKeluar))
+                    .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonHasilIsiTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonHapusBarisTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(119, 119, 119))
