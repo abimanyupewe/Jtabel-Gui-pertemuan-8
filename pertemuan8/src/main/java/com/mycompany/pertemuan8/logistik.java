@@ -37,7 +37,7 @@ public class logistik extends javax.swing.JFrame {
         initComponents();
 
         Object kolom[] = {"No Resi", "Nama Pengirim", "Nama Penerima", "No Tlp", "Alamat Penerima", "Jenis Barang", "Berat", "Jenis Pengiriman", "Mode Pengiriman", "Opsi Extra", "Status"};
-        Object data[][] = {{"001-22", "Abim", "jaki", "0865", "Us", "Makanan", "2 Kg", "JNE", "Express", "Bubble Wrap", "Selesai"}};
+        Object data[][] = {{"xxx-xx", "name", "name", "62#####", "address", "-----", "- Kg", "##", "####", "#####", "######"}};
 
         model = new DefaultTableModel(data, kolom);
         jTableHasil.setModel(model);
@@ -80,16 +80,17 @@ public class logistik extends javax.swing.JFrame {
         jRadioButtonExpress = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jCheckBoxBubbleWrap = new javax.swing.JCheckBox();
-        jCheckBoxPackingKaya = new javax.swing.JCheckBox();
+        jCheckBoxPackingKayu = new javax.swing.JCheckBox();
         jCheckBoxDoubleKarton = new javax.swing.JCheckBox();
         jCheckBoxPlastikWrap = new javax.swing.JCheckBox();
         jCBStatusPengiriman = new javax.swing.JComboBox<>();
         btnSimpan = new javax.swing.JButton();
-        jButtonHasilIsiTabel = new javax.swing.JButton();
-        jButtonHapusBarisTabel = new javax.swing.JButton();
+        btnHapusisiTabel = new javax.swing.JButton();
+        btnHapusBarisTabel = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableHasil = new javax.swing.JTable();
-        jButtonKeluar = new javax.swing.JButton();
+        btnKeluar = new javax.swing.JButton();
+        btnHapusInputan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,7 +141,7 @@ public class logistik extends javax.swing.JFrame {
 
         jCheckBoxBubbleWrap.setText("Bubble wrap");
 
-        jCheckBoxPackingKaya.setText("Packing kayu");
+        jCheckBoxPackingKayu.setText("Packing kayu");
 
         jCheckBoxDoubleKarton.setText("Double karton");
 
@@ -159,25 +160,25 @@ public class logistik extends javax.swing.JFrame {
             }
         });
 
-        jButtonHasilIsiTabel.setBackground(new java.awt.Color(0, 102, 102));
-        jButtonHasilIsiTabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButtonHasilIsiTabel.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonHasilIsiTabel.setText("Hapus Isi Tabel");
-        jButtonHasilIsiTabel.setPreferredSize(new java.awt.Dimension(116, 30));
-        jButtonHasilIsiTabel.addActionListener(new java.awt.event.ActionListener() {
+        btnHapusisiTabel.setBackground(new java.awt.Color(0, 102, 102));
+        btnHapusisiTabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHapusisiTabel.setForeground(new java.awt.Color(255, 255, 255));
+        btnHapusisiTabel.setText("Hapus Isi Tabel");
+        btnHapusisiTabel.setPreferredSize(new java.awt.Dimension(116, 30));
+        btnHapusisiTabel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonHasilIsiTabelActionPerformed(evt);
+                btnHapusisiTabelActionPerformed(evt);
             }
         });
 
-        jButtonHapusBarisTabel.setBackground(new java.awt.Color(0, 102, 102));
-        jButtonHapusBarisTabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButtonHapusBarisTabel.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonHapusBarisTabel.setText("Hapus Baris Tabel");
-        jButtonHapusBarisTabel.setPreferredSize(new java.awt.Dimension(131, 30));
-        jButtonHapusBarisTabel.addActionListener(new java.awt.event.ActionListener() {
+        btnHapusBarisTabel.setBackground(new java.awt.Color(0, 102, 102));
+        btnHapusBarisTabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHapusBarisTabel.setForeground(new java.awt.Color(255, 255, 255));
+        btnHapusBarisTabel.setText("Hapus Baris Tabel");
+        btnHapusBarisTabel.setPreferredSize(new java.awt.Dimension(131, 30));
+        btnHapusBarisTabel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonHapusBarisTabelActionPerformed(evt);
+                btnHapusBarisTabelActionPerformed(evt);
             }
         });
 
@@ -203,17 +204,30 @@ public class logistik extends javax.swing.JFrame {
             }
         });
         jTableHasil.setColumnSelectionAllowed(true);
+        jTableHasil.setSelectionBackground(new java.awt.Color(102, 102, 102));
+        jTableHasil.setSelectionForeground(new java.awt.Color(204, 204, 204));
         jScrollPane3.setViewportView(jTableHasil);
-        jTableHasil.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTableHasil.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        jButtonKeluar.setBackground(new java.awt.Color(0, 102, 102));
-        jButtonKeluar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButtonKeluar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonKeluar.setText("Keluar");
-        jButtonKeluar.setPreferredSize(new java.awt.Dimension(76, 30));
-        jButtonKeluar.addActionListener(new java.awt.event.ActionListener() {
+        btnKeluar.setBackground(new java.awt.Color(0, 102, 102));
+        btnKeluar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnKeluar.setForeground(new java.awt.Color(255, 255, 255));
+        btnKeluar.setText("Keluar");
+        btnKeluar.setPreferredSize(new java.awt.Dimension(76, 30));
+        btnKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonKeluarActionPerformed(evt);
+                btnKeluarActionPerformed(evt);
+            }
+        });
+
+        btnHapusInputan.setBackground(new java.awt.Color(0, 102, 102));
+        btnHapusInputan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHapusInputan.setForeground(new java.awt.Color(255, 255, 255));
+        btnHapusInputan.setText("Hapus inputan");
+        btnHapusInputan.setPreferredSize(new java.awt.Dimension(108, 30));
+        btnHapusInputan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHapusInputanActionPerformed(evt);
             }
         });
 
@@ -221,17 +235,9 @@ public class logistik extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonHasilIsiTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonHapusBarisTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel16)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,7 +258,7 @@ public class logistik extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addComponent(txtNoTlp, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE))))
+                                    .addComponent(txtNoTlp, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -271,7 +277,7 @@ public class logistik extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jCheckBoxBubbleWrap)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jCheckBoxPackingKaya))
+                                        .addComponent(jCheckBoxPackingKayu))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jRadioButtonExpress)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -286,13 +292,23 @@ public class logistik extends javax.swing.JFrame {
                                         .addComponent(jCheckBoxDoubleKarton)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jCheckBoxPlastikWrap))))))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1061, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnHapusInputan, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnHapusisiTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnHapusBarisTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,7 +353,7 @@ public class logistik extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
                             .addComponent(jCheckBoxBubbleWrap)
-                            .addComponent(jCheckBoxPackingKaya))
+                            .addComponent(jCheckBoxPackingKayu))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jCheckBoxDoubleKarton)
@@ -346,15 +362,16 @@ public class logistik extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jCBStatusPengiriman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonHasilIsiTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonHapusBarisTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnHapusisiTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHapusBarisTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHapusInputan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(119, 119, 119))
+                .addGap(152, 152, 152))
         );
 
         pack();
@@ -389,7 +406,7 @@ public class logistik extends javax.swing.JFrame {
         } else {
             bw = "";
         }
-        if (jCheckBoxPackingKaya.isSelected()) {
+        if (jCheckBoxPackingKayu.isSelected()) {
             pk = "Packing Kayu";
         } else {
             pk = "";
@@ -406,10 +423,15 @@ public class logistik extends javax.swing.JFrame {
         }
         status = jCBStatusPengiriman.getSelectedItem().toString();
 //        memasukkan ke table
-        model.addRow(new Object[]{noResi, namaPengririm, namaPenerima, noTlpPenerima, alamat, jenisBarang, berat, jenisPengiriman, modePengiriman, bw, pk, bk, pw, status});
+        confirm = JOptionPane.showConfirmDialog(this, "Apakah inputan sudah benar ?",
+                "Konfirmasi", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            model.addRow(new Object[]{noResi, namaPengririm, namaPenerima, noTlpPenerima, alamat, jenisBarang, berat, jenisPengiriman, modePengiriman, "\n", bw, "\n", pk, "\n", bk, "\n", pw, "\n", status});
+            JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan.", "Info", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnSimpanActionPerformed
 
-    private void jButtonHapusBarisTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHapusBarisTabelActionPerformed
+    private void btnHapusBarisTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusBarisTabelActionPerformed
         // TODO add your handling code here:
         confirm = JOptionPane.showConfirmDialog(this, "Apakah Anda yakin ingin menghapus data pada baris tabel yang anda pilih ?",
                 "Konfirmasi", JOptionPane.YES_NO_OPTION);
@@ -419,9 +441,9 @@ public class logistik extends javax.swing.JFrame {
             jTableHasil.setModel(model);
             JOptionPane.showMessageDialog(this, "Data berhasil dihapus.", "Info", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_jButtonHapusBarisTabelActionPerformed
+    }//GEN-LAST:event_btnHapusBarisTabelActionPerformed
 
-    private void jButtonHasilIsiTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHasilIsiTabelActionPerformed
+    private void btnHapusisiTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusisiTabelActionPerformed
         // TODO add your handling code here:
         confirm = JOptionPane.showConfirmDialog(this, "Apakah Anda yakin ingin menghapus semua data di tabel?",
                 "Konfirmasi", JOptionPane.YES_NO_OPTION);
@@ -429,9 +451,9 @@ public class logistik extends javax.swing.JFrame {
             model.setRowCount(0); // Menghapus semua baris
             JOptionPane.showMessageDialog(this, "Semua data berhasil dihapus.", "Info", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_jButtonHasilIsiTabelActionPerformed
+    }//GEN-LAST:event_btnHapusisiTabelActionPerformed
 
-    private void jButtonKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKeluarActionPerformed
+    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
         // TODO add your handling code here:
         confirm = JOptionPane.showConfirmDialog(this, "Apakah Anda yakin ingin keluar dari program ?",
                 "Konfirmasi", JOptionPane.YES_NO_OPTION);
@@ -439,8 +461,31 @@ public class logistik extends javax.swing.JFrame {
             dispose();
             JOptionPane.showMessageDialog(this, "Program Keluar Terimakasih", "Info", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_jButtonKeluarActionPerformed
-    
+    }//GEN-LAST:event_btnKeluarActionPerformed
+
+    private void btnHapusInputanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusInputanActionPerformed
+        // TODO add your handling code here:
+        confirm = JOptionPane.showConfirmDialog(this, "Apakah Anda yakin ingin menghapus inputan ?",
+                "Konfirmasi", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            txtNoResi.setText("");
+            txtNamaPengirim.setText("");
+            txtNamaPenerima.setText("");
+            txtNoTlp.setText("");
+            jTextAreaAlamat.setText("");
+            jCBJenisbarang.setSelectedItem("None");
+            txtBeratBarang.setText("");
+            jCBJenisPengiriman.setSelectedItem("None");
+            btnGroupModePengiriman.clearSelection();
+            jCheckBoxBubbleWrap.setSelected(false);
+            jCheckBoxPackingKayu.setSelected(false);
+            jCheckBoxDoubleKarton.setSelected(false);
+            jCheckBoxPlastikWrap.setSelected(false);
+            jCBStatusPengiriman.setSelectedItem("None");
+            JOptionPane.showMessageDialog(this, "Inputan berhasil dihapus.", "Info", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnHapusInputanActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -468,6 +513,12 @@ public class logistik extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -479,16 +530,17 @@ public class logistik extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btnGroupModePengiriman;
+    private javax.swing.JButton btnHapusBarisTabel;
+    private javax.swing.JButton btnHapusInputan;
+    private javax.swing.JButton btnHapusisiTabel;
+    private javax.swing.JButton btnKeluar;
     private javax.swing.JButton btnSimpan;
-    private javax.swing.JButton jButtonHapusBarisTabel;
-    private javax.swing.JButton jButtonHasilIsiTabel;
-    private javax.swing.JButton jButtonKeluar;
     private javax.swing.JComboBox<String> jCBJenisPengiriman;
     private javax.swing.JComboBox<String> jCBJenisbarang;
     private javax.swing.JComboBox<String> jCBStatusPengiriman;
     private javax.swing.JCheckBox jCheckBoxBubbleWrap;
     private javax.swing.JCheckBox jCheckBoxDoubleKarton;
-    private javax.swing.JCheckBox jCheckBoxPackingKaya;
+    private javax.swing.JCheckBox jCheckBoxPackingKayu;
     private javax.swing.JCheckBox jCheckBoxPlastikWrap;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
