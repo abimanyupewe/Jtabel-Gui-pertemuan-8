@@ -21,11 +21,13 @@ public class logistik extends javax.swing.JFrame {
     String noResi,
             namaPengririm,
             namaPenerima,
+            noTlpPengirim,
+            alamatPengirim,
             noTlpPenerima,
-            alamat,
+            alamatPenerima,
             jenisBarang,
             berat,
-            jenisPengiriman,
+            jenisJasaPengiriman,
             modePengiriman,
             bw,
             pk,
@@ -36,8 +38,8 @@ public class logistik extends javax.swing.JFrame {
     public logistik() {
         initComponents();
 
-        Object kolom[] = {"No Resi", "Nama Pengirim", "Nama Penerima", "No Tlp", "Alamat Penerima", "Jenis Barang", "Berat", "Jenis Pengiriman", "Mode Pengiriman", "Opsi Extra", "Status"};
-        Object data[][] = {{"xxx-xx", "name", "name", "62#####", "address", "-----", "- Kg", "##", "####", "#####", "######"}};
+        Object kolom[] = {"No Resi", "Nama Pengirim", "Nama Penerima", "No Tlp Pengirim", "Alamat Pengirim", "No Tlp Penerima", "Alamat Penerima", "Jenis Barang", "Berat", "Jenis Pengiriman", "Mode Pengiriman", "Opsi Extra", "Status"};
+        Object data[][] = {};
 
         model = new DefaultTableModel(data, kolom);
         jTableHasil.setModel(model);
@@ -71,9 +73,9 @@ public class logistik extends javax.swing.JFrame {
         txtNoResi = new javax.swing.JTextField();
         txtNamaPengirim = new javax.swing.JTextField();
         txtNamaPenerima = new javax.swing.JTextField();
-        txtNoTlp = new javax.swing.JTextField();
+        txtNoTlpPengirim = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaAlamat = new javax.swing.JTextArea();
+        jTextAreaAlamatPengirim = new javax.swing.JTextArea();
         jCBJenisbarang = new javax.swing.JComboBox<>();
         txtBeratBarang = new javax.swing.JTextField();
         jCBJenisPengiriman = new javax.swing.JComboBox<>();
@@ -91,6 +93,11 @@ public class logistik extends javax.swing.JFrame {
         jTableHasil = new javax.swing.JTable();
         btnKeluar = new javax.swing.JButton();
         btnHapusInputan = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        txtNoTlpPenerima = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextAreaAlamatPenerima = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,23 +107,24 @@ public class logistik extends javax.swing.JFrame {
 
         jLabel3.setText("No RESI");
 
-        jLabel4.setText("No Tlp (Penerima)");
+        jLabel4.setText("No Tlp (Pengirim)");
 
         jLabel5.setText("Status Pengiriman");
 
-        jLabel6.setText("Berat");
+        jLabel6.setText("Berat (kg)");
 
         jLabel7.setText("Jenis barang");
 
-        jLabel8.setText("Jenis Pengiriman");
+        jLabel8.setText("Jenis Jasa Pengiriman");
 
-        jLabel12.setText("Alamat tujuan");
+        jLabel12.setText("Alamat pengirim");
 
         jLabel13.setText("Opsi Extra");
 
         jLabel14.setText("Mode pengiriman");
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 102, 102));
         jLabel16.setText("Data pengiriman");
 
         txtNoResi.addActionListener(new java.awt.event.ActionListener() {
@@ -125,9 +133,9 @@ public class logistik extends javax.swing.JFrame {
             }
         });
 
-        jTextAreaAlamat.setColumns(20);
-        jTextAreaAlamat.setRows(5);
-        jScrollPane1.setViewportView(jTextAreaAlamat);
+        jTextAreaAlamatPengirim.setColumns(20);
+        jTextAreaAlamatPengirim.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaAlamatPengirim);
 
         jCBJenisbarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Makanan", "Elektronik", "Pakaian", "Kendaraan", "Barang Pecah belah" }));
 
@@ -231,6 +239,14 @@ public class logistik extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setText("No Tlp (Penerima)");
+
+        jLabel15.setText("Alamat tujuan");
+
+        jTextAreaAlamatPenerima.setColumns(20);
+        jTextAreaAlamatPenerima.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaAlamatPenerima);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -253,12 +269,16 @@ public class logistik extends javax.swing.JFrame {
                                     .addComponent(txtNamaPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel12))
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel15))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addComponent(txtNoTlp, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtNoTlpPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNoTlpPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -324,14 +344,22 @@ public class logistik extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNamaPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNoTlp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNoTlpPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNoTlpPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
@@ -362,16 +390,16 @@ public class logistik extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jCBStatusPengiriman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHapusisiTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHapusBarisTabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHapusInputan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(152, 152, 152))
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112))
         );
 
         pack();
@@ -387,13 +415,15 @@ public class logistik extends javax.swing.JFrame {
         noResi = txtNoResi.getText();
         namaPengririm = txtNamaPengirim.getText();
         namaPenerima = txtNamaPenerima.getText();
-        noTlpPenerima = txtNoTlp.getText();
-        alamat = jTextAreaAlamat.getText();
+        noTlpPengirim = txtNoTlpPengirim.getText();
+        alamatPengirim = jTextAreaAlamatPengirim.getText();
+        noTlpPenerima = txtNoTlpPenerima.getText();
+        alamatPenerima = jTextAreaAlamatPenerima.getText();
 
 //        data barang
         jenisBarang = jCBJenisbarang.getSelectedItem().toString();
         berat = txtBeratBarang.getText();
-        jenisPengiriman = jCBJenisPengiriman.getSelectedItem().toString();
+        jenisJasaPengiriman = jCBJenisPengiriman.getSelectedItem().toString();
 //      mode pengiriman
         if (jRadioButtonExpress.isSelected()) {
             modePengiriman = "Express";
@@ -426,7 +456,18 @@ public class logistik extends javax.swing.JFrame {
         confirm = JOptionPane.showConfirmDialog(this, "Apakah inputan sudah benar ?",
                 "Konfirmasi", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
-            model.addRow(new Object[]{noResi, namaPengririm, namaPenerima, noTlpPenerima, alamat, jenisBarang, berat, jenisPengiriman, modePengiriman, "\n", bw, "\n", pk, "\n", bk, "\n", pw, "\n", status});
+            model.addRow(new Object[]{
+                noResi, 
+                namaPengririm, 
+                namaPenerima, 
+                noTlpPengirim, 
+                alamatPengirim,
+                noTlpPenerima, 
+                alamatPenerima, 
+                jenisBarang, 
+                berat, 
+                jenisJasaPengiriman, 
+                modePengiriman, bw, status});
             JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan.", "Info", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnSimpanActionPerformed
@@ -448,7 +489,7 @@ public class logistik extends javax.swing.JFrame {
         confirm = JOptionPane.showConfirmDialog(this, "Apakah Anda yakin ingin menghapus semua data di tabel?",
                 "Konfirmasi", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
-            model.setRowCount(0); // Menghapus semua baris
+            model.setRowCount(0); // Menghapus semua isi tabel
             JOptionPane.showMessageDialog(this, "Semua data berhasil dihapus.", "Info", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnHapusisiTabelActionPerformed
@@ -471,8 +512,10 @@ public class logistik extends javax.swing.JFrame {
             txtNoResi.setText("");
             txtNamaPengirim.setText("");
             txtNamaPenerima.setText("");
-            txtNoTlp.setText("");
-            jTextAreaAlamat.setText("");
+            txtNoTlpPengirim.setText("");
+            jTextAreaAlamatPengirim.setText("");
+            txtNoTlpPenerima.setText("");
+            jTextAreaAlamatPenerima.setText("");
             jCBJenisbarang.setSelectedItem("None");
             txtBeratBarang.setText("");
             jCBJenisPengiriman.setSelectedItem("None");
@@ -546,6 +589,7 @@ public class logistik extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -554,16 +598,20 @@ public class logistik extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButtonExpress;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTableHasil;
-    private javax.swing.JTextArea jTextAreaAlamat;
+    private javax.swing.JTextArea jTextAreaAlamatPenerima;
+    private javax.swing.JTextArea jTextAreaAlamatPengirim;
     private javax.swing.JTextField txtBeratBarang;
     private javax.swing.JTextField txtNamaPenerima;
     private javax.swing.JTextField txtNamaPengirim;
     private javax.swing.JTextField txtNoResi;
-    private javax.swing.JTextField txtNoTlp;
+    private javax.swing.JTextField txtNoTlpPenerima;
+    private javax.swing.JTextField txtNoTlpPengirim;
     // End of variables declaration//GEN-END:variables
 }
